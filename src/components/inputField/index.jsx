@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 /**
  * Input component.
@@ -34,3 +35,16 @@ export default function Input({
     </div>
   );
 }
+
+Input.propTypes = {
+  inputName: PropTypes.string.isRequired,
+  isSuccess: PropTypes.bool,
+  isError: PropTypes.bool,
+  validationMessage: PropTypes.string,
+};
+
+Input.defaultProps = {
+  isSuccess: false,
+  isError: false,
+  validationMessage: "",
+};
